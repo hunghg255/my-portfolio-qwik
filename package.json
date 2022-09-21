@@ -6,7 +6,6 @@
   },
   "private": true,
   "scripts": {
-    "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.types": "tsc --incremental --noEmit",
@@ -17,7 +16,9 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "build.ssg": "vite build --ssr src/entry.static.tsx",
+    "build": "npm run build.ssg"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.9.0",
